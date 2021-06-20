@@ -1,0 +1,139 @@
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to right, #43c6ac, #191654);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form input,
+form button {
+  font-size: 24px;
+  padding: 10px;
+}
+
+form input {
+  border: none;
+  border-radius: 20px;
+}
+
+form input::placeholder {
+  color: #d1d1d1;
+}
+
+form button {
+  border: none;
+  border-radius: 20px;
+  width: 60px;
+  margin-left: 10px;
+  background: #43c6ac;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #43c6ac;
+  color: #ffffff;
+  cursor: pointer;
+  animation: shadow-pop-tl 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+@keyframes shadow-pop-tl {
+  0% {
+    box-shadow: 0 0 #191654, 0 0 #191654, 0 0 #191654, 0 0 #191654, 0 0 #191654,
+      0 0 #191654, 0 0 #191654, 0 0 #191654;
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: -1px -1px #191654, -2px -2px #191654, -3px -3px #191654,
+      -4px -4px #191654, -5px -5px #191654, -6px -6px #191654, -7px -7px #191654,
+      -8px -8px #191654;
+    transform: translateX(8px) translateY(8px);
+  }
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.todo {
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+  transition: all 0.5s ease;
+}
+
+.todo-item {
+  list-style: none;
+  padding: 8px;
+  background: #ffffff;
+  width: 350px;
+  border-radius: 20px;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.todo-delete,
+.todo-check {
+  width: 50px;
+  font-size: 22px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.todo-delete {
+  background: #dd3e54;
+  color: #ffffff;
+}
+
+.todo-check {
+  margin-left: 10px;
+  margin-right: 5px;
+  background: #11998e;
+  color: #ffffff;
+}
+
+.todo-delete:hover {
+  background: #ff5f6d;
+}
+
+.todo-check:hover {
+  background: #18a599;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
